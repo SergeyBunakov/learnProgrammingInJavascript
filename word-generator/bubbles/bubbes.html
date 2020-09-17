@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bubbles</title>
+</head>
+<body>
+<h1 style="font-size: 48px; color: maroon; text-align: center;">Bubbles</h1>
+
+<script>
+
+    let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61,
+        46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44];
+
+    function printAndGetHighScore(scores) {
+        let highScore = 0;
+        let output;
+        for (let i = 0; i < scores.length; i++) {
+            output = ('Bubble solution #' + i + 'score: ' + scores[i]);
+            console.log(output);
+            if (scores[i] > highScore) {
+                highScore = scores[i];
+            }
+        }
+        return highScore;
+    }
+
+    function getBestResult(scores, highScore) {
+        let bestSolutions = [];
+        for (let i = 0; i < scores.length; i++) {
+            if (scores[i] == highScore) {
+                bestSolutions.push(i);
+            }
+        }
+        return bestSolutions;
+    }
+
+    let highScore = printAndGetHighScore(scores);
+    console.log("Bubbles test: " + scores.length);
+    console.log('Highest score: ' + highScore);
+
+    let bestSolutions = getBestResult(scores, highScore);
+    console.log('Solutions with the highest score: ' + bestSolutions);
+
+</script>
+
+</body>
+</html>
