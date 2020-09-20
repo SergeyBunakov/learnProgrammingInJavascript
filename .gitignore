@@ -1,2 +1,5 @@
-.DS_Store
-.idea/
+/node_modules/
+/.git/
+/**/Thumbs.db
+/**/*.DS_Store
+/.DS_Store
